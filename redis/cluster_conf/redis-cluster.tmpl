@@ -1,0 +1,25 @@
+#Port
+port ${PORT}
+#Unprotected mode
+protected-mode no
+#Enable cluster mode
+cluster-enabled yes
+cluster-config-file nodes.conf
+#Timeout
+cluster-node-timeout 5000
+#IP address of each node of the cluster
+cluster-announce-ip redis-${PORT}
+#Cluster node mapping port
+cluster-announce-port ${PORT}
+#Cluster bus port
+cluster-announce-bus-port 1${PORT}
+#Enable AOF persistence policy
+appendonly yes
+#Background operation
+#daemonize yes
+#Process number storage
+pidfile /var/run/redis_${PORT}.pid
+#Cluster encryption
+#masterauth 123456
+#requirepass 123456
+enable-debug-command yes
