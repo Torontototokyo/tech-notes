@@ -16,7 +16,7 @@ openssl x509 -in path/cert.pem --noout --text
 ## 自签名 <a name = "getting_started"></a>
 
 ```
-openssl x509 req -key path/private.pem -out /path/cert.pem 
+ openssl req -new -x509 -key path/private.pem -out /path/cert.pem 
 ```
 
 ### Prerequisites
