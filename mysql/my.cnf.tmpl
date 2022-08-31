@@ -1,0 +1,26 @@
+!includedir /etc/mysql/conf.d/
+!includedir /etc/mysql/mysql.conf.d/
+[mysqld]
+server_id=${SERVER_ID}
+gtid_mode=ON
+enforce_gtid_consistency=ON
+master_info_repository=TABLE
+relay_log_info_repository=TABLE
+binlog_checksum=NONE
+log_slave_updates=ON
+log_bin=binlog
+binlog_format=ROW
+general_log_file=/var/log/mysql/mysql.log
+general_log=1
+log_error=/var/log/mysql/mysql_error.log
+#
+# Group Replication configuration
+#
+plugin_load_add='group_replication.so'
+transaction_write_set_extraction=XXHASH64
+group_replication_group_name="f1b6ce00-28c0-11ed-9080-0242ac110002"
+group_replication_start_on_boot=off
+group_replication_local_address="${LOCAL_ADDRESS}"
+group_replication_group_seeds="${GROUP_HOSTS}"
+group_replication_bootstrap_group=off
+group_replication_enforce_update_everywhere_checks=false
