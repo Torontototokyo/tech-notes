@@ -1,3 +1,5 @@
+### kubernetes version v1.25.2
+### OS Ubuntu 20
 turn swap off
 ```shell
 swapoff -a
