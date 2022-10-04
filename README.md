@@ -1,0 +1,2 @@
+# tech-notes
+some notes
